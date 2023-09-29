@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Satisfaction Prediction</title>
+</head>
+<body>
+    <h1>Job Satisfaction Prediction</h1>
+    <form method="POST" action="/job_satisfaction">
+        <!-- Marital Status -->
+        <label for="MaritalStatus">Marital Status:</label>
+        <select name="MaritalStatus" id="MaritalStatus" required>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+        </select><br>
+
+        <!-- Percent Salary Hike -->
+        <label for="PercentSalaryHike">Percent Salary Hike:</label>
+        <input type="number" name="PercentSalaryHike" id="PercentSalaryHike" required><br>
+
+        <!-- OverTime -->
+        <label for="OverTime">OverTime:</label>
+        <select name="OverTime" id="OverTime" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br>
+
+        <!-- Gender -->
+        <label for="Gender">Gender:</label>
+        <select name="Gender" id="Gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+
+        <!-- Job Role -->
+        <label for="JobRole">Job Role:</label>
+        <select name="JobRole" id="JobRole" required>
+            <!-- Add job roles here -->
+        </select><br>
+
+        <!-- Environment Satisfaction -->
+        <label for="EnvironmentSatisfaction">Environment Satisfaction:</label>
+        <input type="number" name="EnvironmentSatisfaction" id="EnvironmentSatisfaction" required><br>
+
+        <!-- Total Working Years -->
+        <label for="TotalWorkingYears">Total Working Years:</label>
+        <input type="number" name="TotalWorkingYears" id="TotalWorkingYears" required><br>
+
+        <!-- Hourly Rate -->
+        <label for="HourlyRate">Hourly Rate:</label>
+        <input type="number" name="HourlyRate" id="HourlyRate" required><br>
+
+        <!-- Age -->
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" id="Age" required><br>
+
+        <!-- Business Travel -->
+        <label for="BusinessTravel">Business Travel:</label>
+        <select name="BusinessTravel" id="BusinessTravel" required>
+            <option value="Non-Travel">Non-Travel</option>
+            <option value="Travel_Frequently">Travel_Frequently</option>
+            <option value="Travel_Rarely">Travel_Rarely</option>
+        </select><br>
+
+        <!-- Monthly Income -->
+        <label for="MonthlyIncome">Monthly Income:</label>
+        <input type="number" name="MonthlyIncome" id="MonthlyIncome" required><br>
+
+        <button type="submit">Predict Job Satisfaction</button>
+    </form>
+    
+    <!-- Display the prediction result here -->
+    {% if prediction is defined %}
+        <p>Predicted Job Satisfaction: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>

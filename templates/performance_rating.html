@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Rating Prediction</title>
+</head>
+<body>
+    <h1>Performance Rating Prediction</h1>
+    <form method="POST" action="/performance_rating">
+        <!-- Employee Environment Satisfaction -->
+        <label for="EmpEnvironmentSatisfaction">Employee Environment Satisfaction:</label>
+        <input type="number" name="EmpEnvironmentSatisfaction" id="EmpEnvironmentSatisfaction" required><br>
+
+        <!-- Employee Last Salary Hike Percent -->
+        <label for="EmpLastSalaryHikePercent">Employee Last Salary Hike Percent:</label>
+        <input type="number" name="EmpLastSalaryHikePercent" id="EmpLastSalaryHikePercent" required><br>
+
+        <!-- Years Since Last Promotion -->
+        <label for="YearsSinceLastPromotion">Years Since Last Promotion:</label>
+        <input type="number" name="YearsSinceLastPromotion" id="YearsSinceLastPromotion" required><br>
+
+        <!-- Employee Department -->
+        <label for="EmpDepartment">Employee Department:</label>
+        <select name="EmpDepartment" id="EmpDepartment" required>
+            <!-- Add department options here -->
+        </select><br>
+
+        <!-- Experience Years in Current Role -->
+        <label for="ExperienceYearsInCurrentRole">Experience Years in Current Role:</label>
+        <input type="number" name="ExperienceYearsInCurrentRole" id="ExperienceYearsInCurrentRole" required><br>
+
+        <!-- Employee Hourly Rate -->
+        <label for="EmpHourlyRate">Employee Hourly Rate:</label>
+        <input type="number" name="EmpHourlyRate" id="EmpHourlyRate" required><br>
+
+        <!-- Employee Job Role -->
+        <label for="EmpJobRole">Employee Job Role:</label>
+        <select name="EmpJobRole" id="EmpJobRole" required>
+            <!-- Add job roles here -->
+        </select><br>
+
+        <!-- Total Work Experience in Years -->
+        <label for="TotalWorkExperienceInYears">Total Work Experience in Years:</label>
+        <input type="number" name="TotalWorkExperienceInYears" id="TotalWorkExperienceInYears" required><br>
+
+        <button type="submit">Predict Performance Rating</button>
+    </form>
+    
+    <!-- Display the prediction result here -->
+    {% if performance_prediction is defined %}
+        <p>Predicted Performance Rating: {{ performance_prediction }}</p>
+    {% endif %}
+</body>
+</html>
